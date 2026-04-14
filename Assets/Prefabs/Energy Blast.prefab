@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8461149072369821270}
   - component: {fileID: 6954235798778951815}
+  - component: {fileID: 5721097364145129107}
   m_Layer: 0
   m_Name: Energy Blast
   m_TagString: Untagged
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5721097364145129107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2340260037407194644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6837730c6bc03d47b30203c26ae57c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 1

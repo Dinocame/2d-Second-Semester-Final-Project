@@ -5,15 +5,18 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public GameObject blastPrefab;
-    public Transform firePoint;
 
-    public float fireDistance = 1.0f; // how far from player
+    public float fireDistance = 1.0f;
+
+    public float cooldown = 0.5f;   // time between shots
+    private float nextFireTime = 0f;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Time.time >= nextFireTime)
         {
             Shoot();
+            nextFireTime = Time.time + cooldown;
         }
     }
 
@@ -22,13 +25,10 @@ public class PlayerAttack : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0f;
 
-        // Direction from player to mouse
         Vector2 direction = (mousePos - transform.position).normalized;
 
-        // Move fire point outward from player
         Vector2 spawnPosition = (Vector2)transform.position + direction * fireDistance;
 
-        // Calculate rotation
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
 
