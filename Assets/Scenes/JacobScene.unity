@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastPrefab: {fileID: 2340260037407194644, guid: e04a92a495a402d498ff8293ce1a4eb8, type: 3}
   fireDistance: 1
-  cooldown: 0.5
+  cooldown: 1
 --- !u!212 &1591187633
 SpriteRenderer:
   m_ObjectHideFlags: 0
