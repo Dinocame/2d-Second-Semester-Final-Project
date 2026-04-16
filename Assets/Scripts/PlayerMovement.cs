@@ -10,7 +10,11 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true;
 
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Transform groundCheck;
+    [SerializeField] private Transform groundCheck1;
+    [SerializeField] private Transform groundCheck2;
+    [SerializeField] private Transform groundCheck3;
+    [SerializeField] private Transform groundCheck4;
+    [SerializeField] private Transform groundCheck5;
     [SerializeField] private LayerMask groundLayer;
 
     // Update is called once per frame
@@ -38,7 +42,14 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        if (Physics2D.Raycast(groundCheck1.position, Vector2.down, 0.2f, groundLayer) || Physics2D.Raycast(groundCheck2.position, Vector2.down, 0.2f, groundLayer) || Physics2D.Raycast(groundCheck3.position, Vector2.down, 0.2f, groundLayer) || Physics2D.Raycast(groundCheck4.position, Vector2.down, 0.2f, groundLayer) || Physics2D.Raycast(groundCheck5.position, Vector2.down, 0.2f, groundLayer))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     private void Flip()
