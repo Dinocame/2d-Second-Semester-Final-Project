@@ -8,12 +8,10 @@ public class PlayerDeath : MonoBehaviour
     public bool isDead = false;
     public GameObject ghost;
     private CinemachineVirtualCamera _cinemachine;
-    private Camera mainCam;
 
     void Start()
     { 
-        mainCam = Camera.main;
-        _cinemachine = mainCam.gameObject.GetComponent<CinemachineVirtualCamera>();
+        _cinemachine = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
     }
 
     // Update is called once per frame
