@@ -5,7 +5,7 @@ using Cinemachine;
 
 public class ReincarnateOrSmthIdkLol : MonoBehaviour
 {
-    public GameObject ghost;
+    public GameObject player;
     private CinemachineVirtualCamera _cinemachine;
 
     void Start()
@@ -24,10 +24,10 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
 
     void Reincarnate()
     {
-        GameObject currentGhost = Instantiate(ghost, transform.position, Quaternion.identity);
+        GameObject currentPlayer = Instantiate(player, transform.position, Quaternion.identity);
         // Set cinemachine target to ghost instead of player
-        _cinemachine.Follow = currentGhost.transform;
-        _cinemachine.LookAt = currentGhost.transform;
+        _cinemachine.Follow = currentPlayer.transform;
+        _cinemachine.LookAt = currentPlayer.transform;
         Destroy(gameObject);
     }
 }

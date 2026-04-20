@@ -8,6 +8,7 @@ TagManager:
   - Corpse
   - Spikes
   - VirtualCamera
+  - Ghost
   layers:
   - Default
   - TransparentFX
