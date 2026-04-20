@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Corpse
+  - Spikes
+  - VirtualCamera
+  - Ghost
   layers:
   - Default
   - TransparentFX

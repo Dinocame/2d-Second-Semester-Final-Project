@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class PlayerDeath : MonoBehaviour
+public class ReincarnateOrSmthIdkLol : MonoBehaviour
 {
-    public bool isDead = false;
-    public GameObject ghost;
+    public GameObject player;
     private CinemachineVirtualCamera _cinemachine;
 
     void Start()
@@ -15,20 +14,20 @@ public class PlayerDeath : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isDead)
+        if (collision.gameObject.CompareTag("Corpse"))
         {
-            PlayerDies();
+            Reincarnate();
         }
     }
 
-    void PlayerDies()
+    void Reincarnate()
     {
-        GameObject currentGhost = Instantiate(ghost, transform.position, Quaternion.identity);
+        GameObject currentPlayer = Instantiate(player, transform.position, Quaternion.identity);
         // Set cinemachine target to ghost instead of player
-        _cinemachine.Follow = currentGhost.transform;
-        _cinemachine.LookAt = currentGhost.transform;
+        _cinemachine.Follow = currentPlayer.transform;
+        _cinemachine.LookAt = currentPlayer.transform;
         Destroy(gameObject);
     }
 }
