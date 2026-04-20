@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using Unity.Cinemachine;
+using Cinemachine;
 
-/*public class PlayerDeath : MonoBehaviour
+public class PlayerDeath : MonoBehaviour
 {
     public bool isDead = false;
     public GameObject ghost;
-    private Cinemachine
+    private CinemachineVirtualCamera _cinemachine;
+    private Camera mainCam;
 
     void Start()
     { 
-        cinemachine = GetComponent Cinemachine
+        mainCam = Camera.main;
+        _cinemachine = mainCam.gameObject.GetComponent<CinemachineVirtualCamera>();
     }
 
     // Update is called once per frame
@@ -27,8 +29,8 @@ using UnityEngine;
     {
         GameObject currentGhost = Instantiate(ghost, transform.position, Quaternion.identity);
         // Set cinemachine target to ghost instead of player
-        GetComponent<2DCamera>().LookAt = ghost;
+        _cinemachine.Follow = currentGhost.transform;
+        _cinemachine.LookAt = currentGhost.transform;
         Destroy(gameObject);
     }
 }
-*/
