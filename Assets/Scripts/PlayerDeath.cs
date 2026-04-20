@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Cinemachine;
 
-public class PlayerDeath : MonoBehaviour
+/*public class PlayerDeath : MonoBehaviour
 {
     public bool isDead = false;
     public GameObject ghost;
@@ -31,3 +31,4 @@ public class PlayerDeath : MonoBehaviour
         Destroy(gameObject);
     }
 }
+*/
