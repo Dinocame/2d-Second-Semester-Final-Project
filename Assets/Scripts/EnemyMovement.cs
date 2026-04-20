@@ -41,12 +41,17 @@ public class EnemyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!HasGroundAhead())
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            return; // STOP EVERYTHING if no ground
+        }
         HandleState();
     }
 
-    // -----------------------------
-    // 🎮 STATE HANDLER
-    // -----------------------------
+
+    //  STATE HANDLER
+
     void HandleState()
     {
         switch (currentState)
@@ -65,9 +70,9 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    // -----------------------------
-    // 🚶 PATROL
-    // -----------------------------
+
+    // PATROL
+
     void Patrol()
     {
         if (!HasGroundAhead())
@@ -86,9 +91,8 @@ public class EnemyMovement : MonoBehaviour
             direction = 1;
     }
 
-    // -----------------------------
-    // 🏃 CHASE PLAYER
-    // -----------------------------
+    // CHASE PLAYER
+
     void Chase()
     {
         if (player == null)
@@ -111,9 +115,9 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    // -----------------------------
-    // 🔙 RETURN TO START
-    // -----------------------------
+
+    // RETURN TO START
+
     void ReturnToStart()
     {
         Vector2 dir = (startPosition - transform.position);
@@ -130,9 +134,9 @@ public class EnemyMovement : MonoBehaviour
         direction = (int)moveDir;
     }
 
-    // -----------------------------
-    // 👁️ DETECTION
-    // -----------------------------
+
+    //  DETECTION
+
     void DetectPlayer()
     {
         Collider2D closeHit = Physics2D.OverlapCircle(transform.position, closeDetectRadius, playerLayer);
@@ -157,9 +161,9 @@ public class EnemyMovement : MonoBehaviour
         return (closeHit != null || visionHit != null);
     }
 
-    // -----------------------------
-    // 🟡 GROUND CHECK
-    // -----------------------------
+
+    // GROUND CHECK
+
     bool HasGroundAhead()
     {
         Vector2 origin = (Vector2)transform.position + new Vector2(direction * edgeOffset, 0);
@@ -171,14 +175,14 @@ public class EnemyMovement : MonoBehaviour
         return hit.collider != null;
     }
 
-    // -----------------------------
-    // 🔄 FACING
-    // -----------------------------
+
+    // FACING
+
     void HandleFacing()
     {
         if (rb.velocity.x > 0)
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(1, 2, 1);
         else if (rb.velocity.x < 0)
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-1, 2, 1);
     }
 }
