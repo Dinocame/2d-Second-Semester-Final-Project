@@ -8,6 +8,7 @@ public class PlayerDeath : MonoBehaviour
     public bool isDead = false;
     public GameObject ghost;
     private CinemachineVirtualCamera _cinemachine;
+    public float soulPower = 60f;
 
     void Start()
     { 
@@ -29,6 +30,7 @@ public class PlayerDeath : MonoBehaviour
         // Set cinemachine target to ghost instead of player
         _cinemachine.Follow = currentGhost.transform;
         _cinemachine.LookAt = currentGhost.transform;
+        currentGhost.GetComponent<ReincarnateOrSmthIdkLol>().soulPower = soulPower;
         Destroy(gameObject);
     }
 }

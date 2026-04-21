@@ -7,6 +7,7 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
 {
     public GameObject player;
     private CinemachineVirtualCamera _cinemachine;
+    public float soulPower = 0f;
 
     void Start()
     { 
@@ -14,6 +15,10 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
     }
 
     // Update is called once per frame
+    void Update()
+    {
+        soulPower -= Time.deltaTime;
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Corpse"))
@@ -29,6 +34,9 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
         // Set cinemachine target to ghost instead of player
         _cinemachine.Follow = currentPlayer.transform;
         _cinemachine.LookAt = currentPlayer.transform;
+        PlayerDeath temp = currentPlayer.GetComponent<PlayerDeath>();
+        temp.soulPower = soulPower;
+        temp.isDead = false;
         Destroy(gameObject);
     }
 }
