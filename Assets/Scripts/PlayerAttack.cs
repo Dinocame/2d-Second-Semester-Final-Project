@@ -11,6 +11,8 @@ public class PlayerAttack : MonoBehaviour
     public float cooldown = 0.5f;   // time between shots
     private float nextFireTime = 0f;
 
+    public float attackDamage = 1f;
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && Time.time >= nextFireTime)
