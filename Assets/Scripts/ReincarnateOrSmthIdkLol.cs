@@ -14,10 +14,11 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
     }
 
     // Update is called once per frame
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Corpse"))
         {
+            Destroy(collision.gameObject);
             Reincarnate();
         }
     }
