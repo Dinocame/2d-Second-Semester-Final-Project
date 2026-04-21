@@ -1,0 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Kill : MonoBehaviour
+{
+    public GameObject player;
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Corpse"))
+        {
+            Destroy(collision.gameObject);
+            player.GetComponent<PlayerDeath>().soulPower = soulPower;
+            player.GetComponent<PlayerDeath>().soulPower = soulPower;
+        }
+    }
+}
