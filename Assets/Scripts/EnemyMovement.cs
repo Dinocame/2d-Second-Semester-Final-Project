@@ -13,6 +13,8 @@ public class EnemyMovement : MonoBehaviour
     public float visionRadius = 6f;
     public LayerMask playerLayer;
 
+    private float attackLockTimer = 0f;
+
     [Header("Ground Check")]
     public float groundCheckDistance = 1.5f;
     public LayerMask groundLayer;
@@ -41,15 +43,26 @@ public class EnemyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (attackLockTimer > 0)
+        {
+            attackLockTimer -= Time.fixedDeltaTime;
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            return;
+        }
+
         if (!HasGroundAhead())
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
-            return; // STOP EVERYTHING if no ground
+            return;
         }
+
         HandleState();
     }
 
-
+    public void LockMovement(float duration)
+{
+        attackLockTimer = duration;
+    }
     //  STATE HANDLER
 
     void HandleState()

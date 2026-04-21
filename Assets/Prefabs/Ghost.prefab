@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8e0157b1ef30d41afa87fc12decac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghostForce: 1000
+  ghostForce: 4000
 --- !u!114 &-8798381502251892966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 102530758488526004, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
+  soulPower: 60
 --- !u!61 &-1399743836083449651
 BoxCollider2D:
   m_ObjectHideFlags: 0

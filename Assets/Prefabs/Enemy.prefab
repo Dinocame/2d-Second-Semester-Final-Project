@@ -139,7 +139,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  edgeOffset: 1
+  edgeOffset: 0.6
 --- !u!61 &4456027070178123980
 BoxCollider2D:
   m_ObjectHideFlags: 0
