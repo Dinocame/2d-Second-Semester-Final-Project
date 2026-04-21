@@ -23,7 +23,7 @@ public class PlayerDeath : MonoBehaviour
         }
     }
 
-    void PlayerDies()
+    public void PlayerDies()
     {
         GameObject currentGhost = Instantiate(ghost, transform.position, Quaternion.identity);
         // Set cinemachine target to ghost instead of player
