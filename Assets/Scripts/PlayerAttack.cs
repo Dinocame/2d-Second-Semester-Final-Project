@@ -32,6 +32,8 @@ public class PlayerAttack : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
 
-        Instantiate(blastPrefab, spawnPosition, rotation);
+        GameObject currentAttack = Instantiate(blastPrefab, spawnPosition, rotation);
+        Kill temp = currentAttack.GetComponent<Kill>();
+        temp.player = gameObject;
     }
 }

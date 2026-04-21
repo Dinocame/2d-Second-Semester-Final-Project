@@ -10,8 +10,7 @@ public class Kill : MonoBehaviour
         if (collision.gameObject.CompareTag("Corpse"))
         {
             Destroy(collision.gameObject);
-            player.GetComponent<PlayerDeath>().soulPower = soulPower;
-            player.GetComponent<PlayerDeath>().soulPower = soulPower;
+            player.GetComponent<PlayerDeath>().soulPower += collision.gameObject.GetComponent<SoulValue>().soulValue;
         }
     }
 }
