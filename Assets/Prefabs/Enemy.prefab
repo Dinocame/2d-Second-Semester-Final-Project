@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1360970953611817821}
   - component: {fileID: 4456027070178123980}
   - component: {fileID: 1373087353713224559}
+  - component: {fileID: 1115084177111234651}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -203,6 +204,19 @@ MonoBehaviour:
   cooldown: 1.5
   windupTime: 0.4
   recoveryTime: 0.5
+--- !u!114 &1115084177111234651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155266426107169576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f75b1339cc8e5343a72bb6173b2a01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
 --- !u!1 &4480084667845548951
 GameObject:
   m_ObjectHideFlags: 0
