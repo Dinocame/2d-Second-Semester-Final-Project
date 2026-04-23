@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class ReincarnateOrSmthIdkLol : MonoBehaviour
 {
@@ -17,12 +18,17 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        soulPower -= Time.deltaTime;
+        soulPower -= Time.deltaTime*3;
+        if (soulPower <= 0f)
+        {
+            SceneManager.LoadScene("LoseScene");
+        }
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Corpse"))
         {
+            soulPower += collision.gameObject.GetComponent<SoulValue>().soulValue;
             Destroy(collision.gameObject);
             Reincarnate();
         }
