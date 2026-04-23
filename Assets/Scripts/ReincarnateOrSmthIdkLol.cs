@@ -28,6 +28,7 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Corpse"))
         {
+            soulPower += collision.gameObject.GetComponent<SoulValue>().soulValue;
             Destroy(collision.gameObject);
             Reincarnate();
         }
