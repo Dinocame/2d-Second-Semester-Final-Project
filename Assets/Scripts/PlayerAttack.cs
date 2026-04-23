@@ -36,6 +36,6 @@ public class PlayerAttack : MonoBehaviour
 
         GameObject currentAttack = Instantiate(blastPrefab, spawnPosition, rotation);
         Kill temp = currentAttack.GetComponent<Kill>();
-        temp.player = gameObject;
+        temp.owner = Kill.OwnerType.Player;
     }
 }

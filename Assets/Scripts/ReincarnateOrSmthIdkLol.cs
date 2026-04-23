@@ -18,7 +18,7 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        soulPower -= Time.deltaTime;
+        soulPower -= Time.deltaTime*3;
         if (soulPower <= 0f)
         {
             SceneManager.LoadScene("LoseScene");
