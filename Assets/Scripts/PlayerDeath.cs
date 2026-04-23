@@ -4,8 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
+
 public class PlayerDeath : MonoBehaviour
 {
+    public int health = 1;
+
     public bool isDead = false;
     public GameObject ghost;
     private CinemachineVirtualCamera _cinemachine;
@@ -16,7 +19,6 @@ public class PlayerDeath : MonoBehaviour
         _cinemachine = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isDead)
@@ -25,18 +27,38 @@ public class PlayerDeath : MonoBehaviour
         }
     }
 
+    // Take Damage
+    public void TakeDamage(int damage)
+    {
+        if (isDead) return;
+
+        health -= damage;
+
+        if (health <= 0)
+        {
+            isDead = true;
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Spikes")) PlayerDies();
+        if (collision.gameObject.CompareTag("Spikes"))
+        {
+            TakeDamage(health); //die                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+        }
     }
 
     public void PlayerDies()
     {
+        if (isDead == false) return; // safety check
+
         GameObject currentGhost = Instantiate(ghost, transform.position, Quaternion.identity);
-        // Set cinemachine target to ghost instead of player
+
         _cinemachine.Follow = currentGhost.transform;
         _cinemachine.LookAt = currentGhost.transform;
+
         currentGhost.GetComponent<ReincarnateOrSmthIdkLol>().soulPower = soulPower;
+
         Destroy(gameObject);
     }
 }
