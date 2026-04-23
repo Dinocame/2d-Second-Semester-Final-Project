@@ -14,6 +14,7 @@ public class Kill : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+<<<<<<< HEAD
         if (hitObjects.Contains(collision.gameObject))
             return;
 
@@ -38,6 +39,11 @@ public class Kill : MonoBehaviour
 
             PlayerDeath pd = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>();
             pd.soulPower += collision.GetComponent<SoulValue>().soulValue;
+=======
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            //put damage stuff here
+>>>>>>> 59bddaf1def02b44231176992add91687ea0f1e5
         }
     }
 }
