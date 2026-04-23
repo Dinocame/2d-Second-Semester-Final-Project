@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class ReincarnateOrSmthIdkLol : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
     void Update()
     {
         soulPower -= Time.deltaTime;
+        if (soulPower <= 0f)
+        {
+            SceneManager.LoadScene("LoseScene");
+        }
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
