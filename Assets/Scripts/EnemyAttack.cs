@@ -92,19 +92,23 @@ public class EnemyAttack : MonoBehaviour
     void Attack()
     {
         movement.LockMovement(0.5f);
+
         float direction = transform.localScale.x > 0 ? 1 : -1;
 
-        // Get enemy width
         Collider2D col = GetComponent<Collider2D>();
         float enemyHalfWidth = col.bounds.extents.x;
 
-        float attackHalfWidth = 1.25f; // half of 2.5 scale
+        float attackHalfWidth = 1.25f;
 
         float offset = enemyHalfWidth + attackHalfWidth + 0.1f;
 
-        Vector2 spawnPos = (Vector2)transform.position + new Vector2(-direction * offset*1.5f, 0);
+        Vector2 spawnPos = (Vector2)transform.position + new Vector2(-direction * offset, 0);
 
         GameObject attack = Instantiate(attackPrefab, spawnPos, Quaternion.identity);
+
+        // Kill
+        Kill temp = attack.GetComponent<Kill>();
+        temp.owner = Kill.OwnerType.Enemy;
 
         attack.transform.localScale = new Vector3(2.5f * direction, 0.5f, 1f);
     }
