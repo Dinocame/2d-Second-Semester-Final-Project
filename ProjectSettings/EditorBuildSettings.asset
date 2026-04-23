@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 1833c1f487412d24980ab9ce707d5885
+  - enabled: 0
+    path: Assets/Scenes/LucasScene.unity
+    guid: e3c86ae2954b748479c9be9b5b38c3d6
+  - enabled: 1
+    path: Assets/Scenes/LoseScene.unity
+    guid: 837f388ec515fad4d8d160ba8c26f128
   m_configObjects: {}

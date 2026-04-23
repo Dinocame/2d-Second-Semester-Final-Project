@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 3623157067301008631}
   - component: {fileID: 5615878476417258752}
   - component: {fileID: 2712162658950131837}
+  - component: {fileID: 4046650925541522642}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -235,6 +236,7 @@ MonoBehaviour:
   blastPrefab: {fileID: 2340260037407194644, guid: e04a92a495a402d498ff8293ce1a4eb8, type: 3}
   fireDistance: 1
   cooldown: 1
+  attackDamage: 1
 --- !u!114 &2712162658950131837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,6 +251,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   ghost: {fileID: 3448528111510096280, guid: d02dc514df8912c4d97c7a6dca2a4b8c, type: 3}
+  soulPower: 60
+--- !u!114 &4046650925541522642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102530758488526004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12825a6919401454fb6a92398d99b749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3361531283009707167
 GameObject:
   m_ObjectHideFlags: 0
