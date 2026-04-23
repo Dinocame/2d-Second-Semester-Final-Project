@@ -7,10 +7,9 @@ public class Kill : MonoBehaviour
     public GameObject player;
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Corpse"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            player.GetComponent<PlayerDeath>().soulPower += collision.gameObject.GetComponent<SoulValue>().soulValue;
-            Destroy(collision.gameObject);
+            //put damage stuff here
         }
     }
 }

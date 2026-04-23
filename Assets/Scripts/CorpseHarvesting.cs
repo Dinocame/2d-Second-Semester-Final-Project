@@ -13,15 +13,14 @@ public class CorpseHarvesting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Corpse"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            gameObject.GetComponent<PlayerDeath>().soulPower += collision.gameObject.GetComponent<SoulValue>().soulValue;
-            Destroy(collision.gameObject);
+            RaycastHit2D hit = Physics2D.CircleCast(transform.position, 1f, Vector2.zero, 1f, LayerMask.GetMask("Corpse"));
+            if (hit.collider != null)
+            {
+                gameObject.GetComponent<PlayerDeath>().soulPower += hit.collider.gameObject.GetComponent<SoulValue>().soulValue;
+                Destroy(hit.collider.gameObject);
+            }
         }
-    }
+    } 
 }
