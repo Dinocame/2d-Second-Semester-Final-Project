@@ -30,14 +30,5 @@ public class Kill : MonoBehaviour
         {
             collision.GetComponent<EnemyHealth>()?.TakeDamage(damage);
         }
-
-        //CORPSE 
-        if (collision.CompareTag("Corpse") && owner == OwnerType.Player)
-        {
-            Destroy(collision.gameObject);
-
-            PlayerDeath pd = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>();
-            pd.soulPower += collision.GetComponent<SoulValue>().soulValue;
-        }
     }
 }
