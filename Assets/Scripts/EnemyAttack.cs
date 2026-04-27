@@ -93,7 +93,7 @@ public class EnemyAttack : MonoBehaviour
     {
         movement.LockMovement(0.5f);
 
-        float direction = movement.GetDirection();
+        float direction = -movement.GetDirection();
 
         Collider2D col = GetComponent<Collider2D>();
         float enemyHalfWidth = col.bounds.extents.x;

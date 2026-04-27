@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  corpsePrefab: {fileID: 4423455660827136863, guid: df3af159d65130941881af67432cd569, type: 3}
 --- !u!1 &4480084667845548951
 GameObject:
   m_ObjectHideFlags: 0
