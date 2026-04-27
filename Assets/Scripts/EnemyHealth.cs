@@ -6,6 +6,8 @@ public class EnemyHealth : MonoBehaviour
 {
     public int health = 1;
 
+    public GameObject corpsePrefab; // 👈 assign in Inspector
+
     public void TakeDamage(int damage)
     {
         health -= damage;
@@ -18,6 +20,9 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
+        // Spawn corpse at enemy position
+        Instantiate(corpsePrefab, transform.position, Quaternion.identity);
+
         Destroy(gameObject);
     }
 }
