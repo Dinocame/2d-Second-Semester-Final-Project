@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class ReincarnateOrSmthIdkLol : MonoBehaviour
@@ -9,16 +10,19 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
     public GameObject player;
     private CinemachineVirtualCamera _cinemachine;
     public float soulPower = 0f;
+    private TMP_Text soulPowerText;
 
     void Start()
     { 
         _cinemachine = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
+        soulPowerText =  GameObject.FindWithTag("soulpower").GetComponent<TMP_Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
         soulPower -= Time.deltaTime*3;
+        UpdateSoulText();
         if (soulPower <= 0f)
         {
             SceneManager.LoadScene("LoseScene");
@@ -44,5 +48,10 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
         temp.soulPower = soulPower;
         temp.isDead = false;
         Destroy(gameObject);
+    }
+
+    void UpdateSoulText()
+    {
+        soulPowerText.text = "Soul Power: " + Mathf.FloorToInt(soulPower);;
     }
 }
