@@ -203,4 +203,9 @@ public class EnemyMovement : MonoBehaviour
         else if (rb.velocity.x < 0)
             transform.localScale = new Vector3(-1, 2, 1);
     }
+    // Get direction
+    public int GetDirection()
+    {
+        return direction;
+    }
 }
