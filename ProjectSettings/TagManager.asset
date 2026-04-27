@@ -9,6 +9,7 @@ TagManager:
   - Spikes
   - VirtualCamera
   - Ghost
+  - soulpower
   layers:
   - Default
   - TransparentFX
