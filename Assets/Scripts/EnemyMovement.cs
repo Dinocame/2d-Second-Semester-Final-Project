@@ -52,6 +52,11 @@ public class EnemyMovement : MonoBehaviour
 
         if (!HasGroundAhead())
         {
+            if (currentState == State.Patrol || currentState == State.Return)
+            {
+                direction *= -1; // turn around
+            }
+
             rb.velocity = new Vector2(0, rb.velocity.y);
             return;
         }
