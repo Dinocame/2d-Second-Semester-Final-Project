@@ -210,8 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711938e526b75984382f4cdb5b48fb6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  jumpingPower: 18.7
+  speed: 10
+  jumpingPower: 19
   rb: {fileID: 6260744491285906398}
   groundCheck1: {fileID: 3796352299208317859}
   groundCheck2: {fileID: 2955779953480490293}
@@ -249,6 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc86d7abd6e87cd44b78adfca40fd3eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 1
   isDead: 0
   ghost: {fileID: 3448528111510096280, guid: d02dc514df8912c4d97c7a6dca2a4b8c, type: 3}
   soulPower: 60
