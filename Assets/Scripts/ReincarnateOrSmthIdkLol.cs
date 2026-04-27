@@ -33,14 +33,15 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
         if (collision.gameObject.CompareTag("Corpse"))
         {
             soulPower += collision.gameObject.GetComponent<SoulValue>().soulValue;
+            Vector3 pos = collision.gameObject.transform.position;
             Destroy(collision.gameObject);
-            Reincarnate();
+            Reincarnate(pos);
         }
     }
 
-    void Reincarnate()
+    void Reincarnate(Vector3 pos)
     {
-        GameObject currentPlayer = Instantiate(player, transform.position, Quaternion.identity);
+        GameObject currentPlayer = Instantiate(player, pos, Quaternion.identity);
         // Set cinemachine target to ghost instead of player
         _cinemachine.Follow = currentPlayer.transform;
         _cinemachine.LookAt = currentPlayer.transform;
