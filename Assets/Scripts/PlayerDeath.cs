@@ -3,24 +3,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using TMPro;
 
 
 public class PlayerDeath : MonoBehaviour
 {
     public int health = 1;
-
     public bool isDead = false;
     public GameObject ghost;
-    private CinemachineVirtualCamera _cinemachine;
     public float soulPower = 60f;
+    
+    private CinemachineVirtualCamera _cinemachine;
+    private TMP_Text soulPowerText;
 
+    void Awake()
+    {
+        soulPowerText =  GameObject.FindWithTag("soulpower").GetComponent<TMP_Text>();
+        UpdateSoulText();
+    }
     void Start()
     { 
         _cinemachine = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
+        
+        //soulPowerText.gameObject.SetActive(false);
     }
 
     void Update()
     {
+        UpdateSoulText();
         if (isDead)
         {
             PlayerDies();
@@ -58,7 +68,13 @@ public class PlayerDeath : MonoBehaviour
         _cinemachine.LookAt = currentGhost.transform;
 
         currentGhost.GetComponent<ReincarnateOrSmthIdkLol>().soulPower = soulPower;
+        
+        soulPowerText.gameObject.SetActive(true);
 
         Destroy(gameObject);
+    }
+    void UpdateSoulText()
+    {
+        soulPowerText.text = "Soul Power: " + Mathf.FloorToInt(soulPower);;
     }
 }
