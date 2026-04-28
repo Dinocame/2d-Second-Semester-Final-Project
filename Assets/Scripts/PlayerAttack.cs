@@ -35,7 +35,9 @@ public class PlayerAttack : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
 
         GameObject currentAttack = Instantiate(blastPrefab, spawnPosition, rotation);
+
         Kill temp = currentAttack.GetComponent<Kill>();
         temp.owner = Kill.OwnerType.Player;
+        //currentAttack.transform.localScale = new Vector3(4.0f * direction, 0.5f, 1f);
     }
 }
