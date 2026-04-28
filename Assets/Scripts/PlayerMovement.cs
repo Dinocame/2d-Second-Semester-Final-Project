@@ -62,4 +62,8 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = localScale;
         }
     }
+    public int GetFacingDirection()
+    {
+        return isFacingRight ? 1 : -1;
+    }
 }
