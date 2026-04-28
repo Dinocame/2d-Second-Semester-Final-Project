@@ -28,8 +28,8 @@ public class PlayerAttack : MonoBehaviour
         mousePos.z = 0f;
 
         Vector2 direction = (mousePos - transform.position).normalized;
-
-        Vector2 spawnPosition = (Vector2)transform.position + direction * fireDistance*3;
+        //Change position and offset
+        Vector2 spawnPosition = (Vector2)transform.position + direction * fireDistance*2;
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
