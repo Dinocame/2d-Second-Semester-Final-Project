@@ -184,9 +184,9 @@ public class EnemyMovement : MonoBehaviour
     void HandleFacing()
     {
         if (rb.velocity.x > 0)
-            transform.localScale = new Vector3(1, 2, 1);
+            transform.localScale = new Vector3(1, 1, 1);
         else if (rb.velocity.x < 0)
-            transform.localScale = new Vector3(-1, 2, 1);
+            transform.localScale = new Vector3(-1, 1, 1);
     }
 
     public int GetDirection()
