@@ -106,8 +106,8 @@ public class EnemyMovement : MonoBehaviour
 
         if (!HasGroundInDirection(moveDir))
         {
-            direction = -moveDir;
-            currentState = State.Return;
+            direction = moveDir; // still face player
+            rb.velocity = new Vector2(0, rb.velocity.y);
             return;
         }
 
@@ -117,6 +117,10 @@ public class EnemyMovement : MonoBehaviour
         if (!CanSeePlayer())
         {
             player = null;
+
+            float dirToStart = (startPosition.x - transform.position.x);
+            direction = dirToStart > 0 ? 1 : -1;
+            rb.velocity = new Vector2(direction * speed, rb.velocity.y);
             currentState = State.Return;
         }
     }
