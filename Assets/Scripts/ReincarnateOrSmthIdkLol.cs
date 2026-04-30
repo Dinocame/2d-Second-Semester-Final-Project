@@ -11,11 +11,14 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
     private CinemachineVirtualCamera _cinemachine;
     public float soulPower = 0f;
     private TMP_Text soulPowerText;
+    private LevelManager levelManager;
 
     void Start()
     { 
         _cinemachine = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
         soulPowerText =  GameObject.FindWithTag("soulpower").GetComponent<TMP_Text>();
+        levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+        levelManager.AcceptYourFate.SetActive(true);
     }
 
     // Update is called once per frame
@@ -48,6 +51,7 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
         PlayerDeath temp = currentPlayer.GetComponent<PlayerDeath>();
         temp.soulPower = soulPower;
         temp.isDead = false;
+        levelManager.AcceptYourFate.SetActive(false);
         Destroy(gameObject);
     }
 
