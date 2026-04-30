@@ -93,16 +93,16 @@ public class EnemyAttack : MonoBehaviour
     {
         movement.LockMovement(0.5f);
 
-        float direction = -movement.GetDirection();
+        float direction = movement.GetDirection();
 
         Collider2D col = GetComponent<Collider2D>();
         float enemyHalfWidth = col.bounds.extents.x;
 
         float attackHalfWidth = 1.25f;
 
-        float offset = enemyHalfWidth + attackHalfWidth + 0.1f;
+        float offset = enemyHalfWidth + attackHalfWidth + 0.0f;
 
-        Vector2 spawnPos = (Vector2)transform.position + new Vector2(-direction * offset, 0);
+        Vector2 spawnPos = (Vector2)transform.position + new Vector2(direction * offset, 0);
 
         GameObject attack = Instantiate(attackPrefab, spawnPos, Quaternion.identity);
 

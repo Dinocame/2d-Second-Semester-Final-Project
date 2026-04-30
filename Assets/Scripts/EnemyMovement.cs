@@ -106,7 +106,8 @@ public class EnemyMovement : MonoBehaviour
 
         if (!HasGroundInDirection(moveDir))
         {
-            rb.velocity = new Vector2(0, rb.velocity.y);
+            direction = -moveDir;
+            currentState = State.Return;
             return;
         }
 
@@ -183,11 +184,8 @@ public class EnemyMovement : MonoBehaviour
 
     void HandleFacing()
     {
-        if (rb.velocity.x > 0)
-            transform.localScale = new Vector3(1, 1, 1);
-        else if (rb.velocity.x < 0)
-            transform.localScale = new Vector3(-1, 1, 1);
-    }
+        transform.localScale = new Vector3(direction, 1, 1);
+    }   
 
     public int GetDirection()
     {
