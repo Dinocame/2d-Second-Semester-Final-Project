@@ -212,6 +212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   jumpingPower: 19
+  coyoteTime: 0.1
   rb: {fileID: 6260744491285906398}
   groundCheck1: {fileID: 3796352299208317859}
   groundCheck2: {fileID: 2955779953480490293}
