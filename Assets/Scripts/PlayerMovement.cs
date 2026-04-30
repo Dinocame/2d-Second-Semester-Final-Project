@@ -8,7 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 8f;
     public float jumpingPower = 16f;
     private bool isFacingRight = true;
-
+    private float lastGroundedTime;
+    public float coyoteTime = 2f;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck1;
     [SerializeField] private Transform groundCheck2;
@@ -22,13 +23,22 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && IsGrounded())
+        //Record last time it was grounded
+        if (IsGrounded() && Time.time>=coyoteTime)
         {
+            lastGroundedTime = Time.time;
+        }
+        
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && Time.time - lastGroundedTime <= coyoteTime)
+        {
+            Debug.Log("Last " + lastGroundedTime);
+            lastGroundedTime = 0;
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 
         if ((Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W)) && rb.velocity.y > 0f)
         {
+            lastGroundedTime = 0;
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
