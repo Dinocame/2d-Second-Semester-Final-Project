@@ -50,25 +50,13 @@ public class EnemyMovement : MonoBehaviour
             return;
         }
 
-        if (!HasGroundAhead())
-        {
-            if (currentState == State.Patrol || currentState == State.Return)
-            {
-                direction *= -1; // turn around
-            }
-
-            rb.velocity = new Vector2(0, rb.velocity.y);
-            return;
-        }
-
         HandleState();
     }
 
     public void LockMovement(float duration)
-{
+    {
         attackLockTimer = duration;
     }
-    //  STATE HANDLER
 
     void HandleState()
     {
@@ -88,15 +76,11 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-
-    // PATROL
-
     void Patrol()
     {
         if (!HasGroundAhead())
         {
-            rb.velocity = new Vector2(0, rb.velocity.y);
-            return;
+            direction *= -1;
         }
 
         rb.velocity = new Vector2(direction * speed, rb.velocity.y);
@@ -109,8 +93,6 @@ public class EnemyMovement : MonoBehaviour
             direction = 1;
     }
 
-    // CHASE PLAYER
-
     void Chase()
     {
         if (player == null)
@@ -119,22 +101,25 @@ public class EnemyMovement : MonoBehaviour
             return;
         }
 
-        Vector2 directionToPlayer = (player.position - transform.position).normalized;
+        Vector2 dir = (player.position - transform.position).normalized;
+        int moveDir = dir.x >= 0 ? 1 : -1;
 
-        rb.velocity = new Vector2(directionToPlayer.x * chaseSpeed, rb.velocity.y);
+        if (!HasGroundInDirection(moveDir))
+        {
+            direction = -moveDir;
+            currentState = State.Return;
+            return;
+        }
 
-        direction = directionToPlayer.x >= 0 ? 1 : -1;
+        rb.velocity = new Vector2(dir.x * chaseSpeed, rb.velocity.y);
+        direction = moveDir;
 
-        // If player leaves detection → return
         if (!CanSeePlayer())
         {
             player = null;
             currentState = State.Return;
         }
     }
-
-
-    // RETURN TO START
 
     void ReturnToStart()
     {
@@ -147,13 +132,17 @@ public class EnemyMovement : MonoBehaviour
             return;
         }
 
-        float moveDir = dir.x > 0 ? 1 : -1;
+        int moveDir = dir.x > 0 ? 1 : -1;
+
+        if (!HasGroundInDirection(moveDir))
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            return;
+        }
+
         rb.velocity = new Vector2(moveDir * speed, rb.velocity.y);
-        direction = (int)moveDir;
+        direction = moveDir;
     }
-
-
-    //  DETECTION
 
     void DetectPlayer()
     {
@@ -179,31 +168,25 @@ public class EnemyMovement : MonoBehaviour
         return (closeHit != null || visionHit != null);
     }
 
-
-    // GROUND CHECK
-
     bool HasGroundAhead()
     {
         Vector2 origin = (Vector2)transform.position + new Vector2(direction * edgeOffset, 0);
-
         RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, groundCheckDistance, groundLayer);
-
-        Debug.DrawRay(origin, Vector2.down * groundCheckDistance, Color.yellow);
-
         return hit.collider != null;
     }
 
-
-    // FACING
+    bool HasGroundInDirection(int dir)
+    {
+        Vector2 origin = (Vector2)transform.position + new Vector2(dir * edgeOffset, 0);
+        RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, groundCheckDistance, groundLayer);
+        return hit.collider != null;
+    }
 
     void HandleFacing()
     {
-        if (rb.velocity.x > 0)
-            transform.localScale = new Vector3(1, 2, 1);
-        else if (rb.velocity.x < 0)
-            transform.localScale = new Vector3(-1, 2, 1);
-    }
-    // Get direction
+        transform.localScale = new Vector3(direction, 1, 1);
+    }   
+
     public int GetDirection()
     {
         return direction;
