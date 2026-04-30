@@ -23,7 +23,7 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
     {
         soulPower -= Time.deltaTime*3;
         UpdateSoulText();
-        if (soulPower <= 0f)
+        if (soulPower <= 0f || Input.GetKeyDown(KeyCode.F))
         {
             SceneManager.LoadScene("LoseScene");
         }
