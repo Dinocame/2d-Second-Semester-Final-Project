@@ -38,6 +38,13 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         DetectPlayer();
+
+        if (currentState == State.Chase && !CanSeePlayer())
+        {
+            player = null;
+            currentState = State.Return;
+        }
+
         HandleFacing();
     }
 
