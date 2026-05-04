@@ -138,14 +138,15 @@ public class EnemyMovement : MonoBehaviour
 
         int moveDir = dir.x > 0 ? 1 : -1;
 
+        // If blocked, FORCE escape from edge
         if (!HasGroundInDirection(moveDir))
         {
-            moveDir *= -1;
+            moveDir = -direction; // use current direction to escape
         }
 
         rb.velocity = new Vector2(moveDir * speed, rb.velocity.y);
         direction = moveDir;
-    }   
+    }
 
     void DetectPlayer()
     {
