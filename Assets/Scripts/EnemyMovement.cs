@@ -140,13 +140,12 @@ public class EnemyMovement : MonoBehaviour
 
         if (!HasGroundInDirection(moveDir))
         {
-            rb.velocity = new Vector2(0, rb.velocity.y);
-            return;
+            moveDir *= -1;
         }
 
         rb.velocity = new Vector2(moveDir * speed, rb.velocity.y);
         direction = moveDir;
-    }
+    }   
 
     void DetectPlayer()
     {

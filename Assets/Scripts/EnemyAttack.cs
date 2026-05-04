@@ -110,6 +110,6 @@ public class EnemyAttack : MonoBehaviour
         Kill temp = attack.GetComponent<Kill>();
         temp.owner = Kill.OwnerType.Enemy;
 
-        attack.transform.localScale = new Vector3(2.5f * direction, 0.5f, 1f);
+        attack.transform.localScale = new Vector3(0.75f * direction, 0.5f, 1f);
     }
 }
