@@ -698,6 +698,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soulValue: 70.01
+--- !u!4 &1030135411 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2875345482057615967, guid: df3af159d65130941881af67432cd569, type: 3}
+  m_PrefabInstance: {fileID: 4559591610576357392}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1095623702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,6 +1408,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 834201143943313186, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
+      propertyPath: m_SortingOrder
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 3659392673386015153, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3659392673386015153, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3659392673386015153, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3920319989677390132, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1442,6 +1463,14 @@ PrefabInstance:
     - target: {fileID: 3920319989677390132, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371134031757994560, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
+      propertyPath: Corpse
+      value: 
+      objectReference: {fileID: 1030135411}
+    - target: {fileID: 4371134031757994560, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
+      propertyPath: distanceFromPlayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

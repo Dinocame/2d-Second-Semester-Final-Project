@@ -276,6 +276,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3659392673386015153}
+  - component: {fileID: 4371134031757994560}
   m_Layer: 0
   m_Name: DirectionIndicator
   m_TagString: Untagged
@@ -299,6 +300,19 @@ Transform:
   - {fileID: 4605403972503329458}
   m_Father: {fileID: 3920319989677390132}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4371134031757994560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895538707820555884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b904a9ebb390d49a3db27670a8ff7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2875345482057615967, guid: df3af159d65130941881af67432cd569, type: 3}
 --- !u!1 &3361531283009707167
 GameObject:
   m_ObjectHideFlags: 0

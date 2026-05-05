@@ -17,7 +17,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck4;
     [SerializeField] private Transform groundCheck5;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -66,10 +72,23 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal >0f)
         {
-            isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
+            /*
+             isFacingRight = !isFacingRight;
+             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;
+            */
+            if (horizontal > 0)
+            {
+                spriteRenderer.flipX = false;
+                isFacingRight = true;
+            }
+
+            if (horizontal < 0)
+            {
+                spriteRenderer.flipX = true;
+                isFacingRight = false;
+            }
         }
     }
     public int GetFacingDirection()
