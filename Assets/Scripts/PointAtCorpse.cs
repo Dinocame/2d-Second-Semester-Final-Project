@@ -6,7 +6,6 @@ public class PointAtCorpse : MonoBehaviour
 {
     public Transform Corpse;
     private Transform Player;
-    public float distanceFromPlayer;
 
     void Start()
     {
