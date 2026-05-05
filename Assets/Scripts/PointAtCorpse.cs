@@ -4,18 +4,47 @@ using UnityEngine;
 
 public class PointAtCorpse : MonoBehaviour
 {
-    public Transform Corpse;
-    private Transform Player;
+    public GameObject[] corpseList;
+    private Transform Ghost;
+    private Transform closestCorpse;
+    private GameObject arrow;
 
     void Start()
     {
-        Player = transform.root;
+        Ghost = transform.root;
+        arrow = transform.GetChild(0).gameObject;
+        corpseList = GameObject.FindGameObjectsWithTag("Corpse");
     }
+    
     // Update is called once per frame
     void Update()
     {
-        Vector3 dir = Corpse.position - Player.position;
-        transform.right = dir;
+        // if no corpse, hide arrow
+        if (corpseList.Length == 0)
+        {
+            arrow.SetActive(false);
+        }
+
+        // else find closest
+        else
+        {
+            arrow.SetActive(true);
+            float minDist = Mathf.Infinity;
+            foreach (GameObject corpse in corpseList)
+            {
+                float currDist = Vector3.Distance(corpse.transform.position, Ghost.position);
+                if (currDist < minDist)
+                {
+                    minDist = currDist;
+                    closestCorpse = corpse.transform;
+                }
+            }
+            Vector3 dir = closestCorpse.position - Ghost.position;
+            transform.right = dir;
+        }
+        
+        // Point at closest
+        
         //transform.position = Player.position + distanceFromPlayer * dir.normalized;
         
     }
