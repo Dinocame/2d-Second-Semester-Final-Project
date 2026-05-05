@@ -235,6 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b904a9ebb390d49a3db27670a8ff7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  corpseList: []
+  timeBetweenArrowCheck: 1
 --- !u!58 &3674934932263755767
 CircleCollider2D:
   m_ObjectHideFlags: 0

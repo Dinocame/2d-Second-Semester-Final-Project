@@ -8,37 +8,28 @@ public class PointAtCorpse : MonoBehaviour
     private Transform Ghost;
     private Transform closestCorpse;
     private GameObject arrow;
+    public float timeBetweenArrowCheck;
 
     void Start()
     {
         Ghost = transform.root;
         arrow = transform.GetChild(0).gameObject;
         corpseList = GameObject.FindGameObjectsWithTag("Corpse");
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
+        InvokeRepeating(nameof(FindClosestCorpse), 0f, timeBetweenArrowCheck);
+        
         // if no corpse, hide arrow
         if (corpseList.Length == 0)
         {
             arrow.SetActive(false);
         }
-
-        // else find closest
-        else
+    }
+    
+    // Update is called once per frame
+    void Update()
+    {
+        if (closestCorpse)
         {
             arrow.SetActive(true);
-            float minDist = Mathf.Infinity;
-            foreach (GameObject corpse in corpseList)
-            {
-                float currDist = Vector3.Distance(corpse.transform.position, Ghost.position);
-                if (currDist < minDist)
-                {
-                    minDist = currDist;
-                    closestCorpse = corpse.transform;
-                }
-            }
             Vector3 dir = closestCorpse.position - Ghost.position;
             transform.right = dir;
         }
@@ -47,6 +38,21 @@ public class PointAtCorpse : MonoBehaviour
         
         //transform.position = Player.position + distanceFromPlayer * dir.normalized;
         
+    }
+
+    void FindClosestCorpse()
+    {
+        float minDist = Mathf.Infinity;
+        foreach (GameObject corpse in corpseList)
+        {
+            float currDist = Vector3.Distance(corpse.transform.position, Ghost.position);
+            if (currDist < minDist)
+            {
+                minDist = currDist;
+                closestCorpse = corpse.transform;
+            }
+        }
+    
     }
 }
 /*
