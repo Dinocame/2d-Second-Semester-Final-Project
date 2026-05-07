@@ -10,11 +10,14 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
     public GameObject player;
     private CinemachineVirtualCamera _cinemachine;
     public float soulPower = 0f;
+    public float soulPowerMax = 100f;
     private TMP_Text soulPowerText;
     private LevelManager levelManager;
+    public SoulBar soulBar;
 
     void Start()
     { 
+        soulBar = FindObjectOfType<SoulBar>();
         _cinemachine = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
         soulPowerText =  GameObject.FindWithTag("soulpower").GetComponent<TMP_Text>();
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
@@ -29,6 +32,11 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
         if (soulPower <= 0f || Input.GetKeyDown(KeyCode.F))
         {
             SceneManager.LoadScene("LoseScene");
+        }
+
+        if (soulPower > soulPowerMax)
+        {
+            soulPower = soulPowerMax;
         }
     }
     void OnTriggerEnter2D(Collider2D collision)
@@ -57,6 +65,7 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
 
     void UpdateSoulText()
     {
-        soulPowerText.text = "Soul Power: " + Mathf.FloorToInt(soulPower);;
+        soulPowerText.text = "Soul Power: " + Mathf.CeilToInt(soulPower) + "/" + Mathf.CeilToInt(soulPowerMax);
+        soulBar.SetSoulPower(soulPower);
     }
 }

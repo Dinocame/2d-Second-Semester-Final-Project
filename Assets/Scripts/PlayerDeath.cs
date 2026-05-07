@@ -12,12 +12,15 @@ public class PlayerDeath : MonoBehaviour
     public bool isDead = false;
     public GameObject ghost;
     public float soulPower = 60f;
+    public float soulPowerMax = 100f;
+    public SoulBar soulBar;
     
     private CinemachineVirtualCamera _cinemachine;
     private TMP_Text soulPowerText;
 
     void Awake()
     {
+        soulBar = FindObjectOfType<SoulBar>();
         soulPowerText =  GameObject.FindWithTag("soulpower").GetComponent<TMP_Text>();
         UpdateSoulText();
     }
@@ -34,6 +37,11 @@ public class PlayerDeath : MonoBehaviour
         if (isDead)
         {
             PlayerDies();
+        }
+        
+        if (soulPower > soulPowerMax)
+        {
+            soulPower = soulPowerMax;
         }
     }
 
@@ -68,6 +76,7 @@ public class PlayerDeath : MonoBehaviour
         _cinemachine.LookAt = currentGhost.transform;
 
         currentGhost.GetComponent<ReincarnateOrSmthIdkLol>().soulPower = soulPower;
+        currentGhost.GetComponent<ReincarnateOrSmthIdkLol>().soulPowerMax = soulPowerMax;
         
         soulPowerText.gameObject.SetActive(true);
 
@@ -75,6 +84,7 @@ public class PlayerDeath : MonoBehaviour
     }
     void UpdateSoulText()
     {
-        soulPowerText.text = "Soul Power: " + Mathf.FloorToInt(soulPower);;
+        soulPowerText.text = "Soul Power: " + Mathf.CeilToInt(soulPower) + "/" + Mathf.CeilToInt(soulPowerMax);
+        soulBar.SetSoulPower(soulPower);
     }
 }
