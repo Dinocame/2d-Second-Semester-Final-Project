@@ -16,7 +16,7 @@ public class EnemyMovement : MonoBehaviour
     private float attackLockTimer = 0f;
 
     [Header("Ground Check")]
-    public float groundCheckDistance = 1.5f;
+    public float groundCheckDistance = 3.0f;
     public LayerMask groundLayer;
     public float edgeOffset = 0.5f;
 
@@ -181,15 +181,39 @@ public class EnemyMovement : MonoBehaviour
 
     bool HasGroundAhead()
     {
-        Vector2 origin = (Vector2)transform.position + new Vector2(direction * edgeOffset, 0);
-        RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, groundCheckDistance, groundLayer);
+        Vector2 origin = (Vector2)transform.position;
+
+        Vector2 castDirection =
+            new Vector2(direction * 0.25f, -1f);
+
+        RaycastHit2D hit = Physics2D.Raycast(
+            origin,
+            castDirection,
+            groundCheckDistance,
+            groundLayer
+        );
+
+        Debug.DrawRay(origin, castDirection * groundCheckDistance, Color.green);
+
         return hit.collider != null;
     }
 
     bool HasGroundInDirection(int dir)
     {
-        Vector2 origin = (Vector2)transform.position + new Vector2(dir * edgeOffset, 0);
-        RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, groundCheckDistance, groundLayer);
+        Vector2 origin = (Vector2)transform.position;
+
+        Vector2 castDirection =
+            new Vector2(dir * 0.25f, -1f);
+
+        RaycastHit2D hit = Physics2D.Raycast(
+            origin,
+            castDirection,
+            groundCheckDistance,
+            groundLayer
+        );
+
+        Debug.DrawRay(origin, castDirection * groundCheckDistance, Color.red);
+
         return hit.collider != null;
     }
 
