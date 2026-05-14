@@ -11,6 +11,7 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
     private CinemachineVirtualCamera _cinemachine;
     public float soulPower = 0f;
     public float soulPowerMax = 100f;
+    public float respawnVerticalOffset = 2f;
     private TMP_Text soulPowerText;
     private LevelManager levelManager;
     public SoulBar soulBar;
@@ -55,7 +56,7 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
 
     void Reincarnate(Vector3 pos)
     {
-        GameObject currentPlayer = Instantiate(player, pos, Quaternion.identity);
+        GameObject currentPlayer = Instantiate(player, pos+Vector3.up*respawnVerticalOffset, Quaternion.identity);
         // Set cinemachine target to ghost instead of player
         _cinemachine.Follow = currentPlayer.transform;
         _cinemachine.LookAt = currentPlayer.transform;
