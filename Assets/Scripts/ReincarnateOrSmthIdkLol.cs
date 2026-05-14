@@ -14,9 +14,11 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
     private TMP_Text soulPowerText;
     private LevelManager levelManager;
     public SoulBar soulBar;
+    private bool isFirst;
 
     void Start()
     { 
+        isFirst = true;
         soulBar = FindObjectOfType<SoulBar>();
         _cinemachine = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
         soulPowerText =  GameObject.FindWithTag("soulpower").GetComponent<TMP_Text>();
@@ -41,8 +43,9 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Corpse"))
+        if (collision.gameObject.CompareTag("Corpse") && isFirst)
         {
+            isFirst = false;
             soulPower += collision.gameObject.GetComponent<SoulValue>().soulValue;
             Vector3 pos = collision.gameObject.transform.position;
             Destroy(collision.gameObject);
