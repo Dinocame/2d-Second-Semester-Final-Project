@@ -4582,30 +4582,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 102530758488526004, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 545967715729424289, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
-      propertyPath: m_Size.y
-      value: 1.8912773
-      objectReference: {fileID: 0}
-    - target: {fileID: 545967715729424289, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.0021739006
-      objectReference: {fileID: 0}
-    - target: {fileID: 2712162658950131837, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
-      propertyPath: Spikes
-      value: 
-      objectReference: {fileID: 108310206}
-    - target: {fileID: 2712162658950131837, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
-      propertyPath: soulPower
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3623157067301008631, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
-      propertyPath: speed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3920319989677390132, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.09
@@ -507489,11 +507465,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8461149072369821270, guid: 45901673e4e83814085f19a983332933, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.4734
+      value: 13.94
       objectReference: {fileID: 0}
     - target: {fileID: 8461149072369821270, guid: 45901673e4e83814085f19a983332933, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.88
+      value: 7.82
       objectReference: {fileID: 0}
     - target: {fileID: 8461149072369821270, guid: 45901673e4e83814085f19a983332933, type: 3}
       propertyPath: m_LocalPosition.z
