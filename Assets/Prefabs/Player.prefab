@@ -239,6 +239,8 @@ MonoBehaviour:
   fireDistance: 1
   cooldown: 1
   attackDamage: 1
+  movingProjectilePrefab: {fileID: 2340260037407194644, guid: 45901673e4e83814085f19a983332933, type: 3}
+  rightClickCooldown: 2
 --- !u!114 &2712162658950131837
 MonoBehaviour:
   m_ObjectHideFlags: 0

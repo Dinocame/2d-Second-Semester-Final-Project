@@ -18,6 +18,8 @@ public class PlayerDeath : MonoBehaviour
     private CinemachineVirtualCamera _cinemachine;
     private TMP_Text soulPowerText;
 
+    
+
     void Awake()
     {
         soulBar = FindObjectOfType<SoulBar>();
