@@ -492,22 +492,26 @@ MonoBehaviour:
     2. Avoid spikes and
     enemy blasts (you die in 1 hit)
 
-    3. Left click to shoot a blast which kills
-    enemies
+    3. Left mouse click to shoot a short-range
+    blast that damages enemies.
 
-    4. Enemies drop corpses (triangles)
+    4. Right mouse click to use 10 soul power and
+    shoot a long-range blast that deals more damage to enemies.
 
-    5. If you die, you become
-    a ghost. Touch a corpse to revive.
+    5. Enemies drop
+    corpses
 
-    6. As a ghost, your soul value will decrease
-    quickly, and when it reaches 0 you die permanently.
+    6. If you die, you become a ghost. Fly into a corpse to revive.
 
-    7. Press space near
-    a corpse when alive to absorb its soul energy and extend your ghost''s lifespan.
+    7.
+    As a ghost, your soul value will decrease quickly, and when it reaches 0 you
+    die permanently.
 
-    8.
-    Reach the yellow cube at the end to win.'
+    8. Press space near a corpse when alive to absorb its soul
+    energy and extend your ghost''s lifespan.
+
+    9. Reach the yellow cube at the
+    end to win.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -534,8 +538,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
