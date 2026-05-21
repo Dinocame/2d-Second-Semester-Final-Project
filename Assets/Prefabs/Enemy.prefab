@@ -204,6 +204,7 @@ MonoBehaviour:
   cooldown: 1.5
   windupTime: 0.3
   recoveryTime: 0.3
+  projectileSpeed: 0
 --- !u!114 &1115084177111234651
 MonoBehaviour:
   m_ObjectHideFlags: 0

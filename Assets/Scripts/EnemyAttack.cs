@@ -9,11 +9,13 @@ public class EnemyAttack : MonoBehaviour
     public float attackRange = 2f;
     public float cooldown = 1.5f;
 
-    public float windupTime = 0.3f;   // pause BEFORE attack
-    public float recoveryTime = 0.5f; // pause AFTER attack
+    public float windupTime = 0.3f;
+    public float recoveryTime = 0.5f;
 
     private float nextAttackTime = 0f;
     private float stateTimer = 0f;
+
+    public float projectileSpeed = 8f;
 
     private Transform player;
     private Rigidbody2D rb;
@@ -86,9 +88,11 @@ public class EnemyAttack : MonoBehaviour
         if (player != null) return;
 
         GameObject p = GameObject.FindGameObjectWithTag("Player");
+
         if (p != null)
             player = p.transform;
     }
+
     void Attack()
     {
         movement.LockMovement(0.5f);
@@ -100,16 +104,23 @@ public class EnemyAttack : MonoBehaviour
 
         float attackHalfWidth = 1.25f;
 
-        float offset = enemyHalfWidth + attackHalfWidth + 0.0f;
+        float offset = enemyHalfWidth + attackHalfWidth;
 
         Vector2 spawnPos = (Vector2)transform.position + new Vector2(direction * offset, 0);
 
         GameObject attack = Instantiate(attackPrefab, spawnPos, Quaternion.identity);
 
-        // Kill
         Kill temp = attack.GetComponent<Kill>();
         temp.owner = Kill.OwnerType.Enemy;
 
         attack.transform.localScale = new Vector3(0.75f * direction, 1f, 1f);
+
+        ProjectileMove move = attack.GetComponent<ProjectileMove>();
+
+        if (move != null)
+        {
+            move.speed = projectileSpeed;
+            move.SetDirection(direction);
+        }
     }
 }
