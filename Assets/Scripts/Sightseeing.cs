@@ -22,7 +22,8 @@ public class Sightseeing : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (!gameObject.activeInHierarchy) return;
+        if (other.gameObject.CompareTag("Player") && isActiveAndEnabled)
         {
             StopAllCoroutines();
             StartCoroutine(SmoothZoom(virtualCamera.m_Lens.OrthographicSize, zoomOutCamSize, zoomTime));
@@ -31,8 +32,12 @@ public class Sightseeing : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        StopAllCoroutines();
-        StartCoroutine(SmoothZoom(virtualCamera.m_Lens.OrthographicSize, originalCamSize, zoomTime));
+        if (!gameObject.activeInHierarchy) return;
+        if (isActiveAndEnabled)
+        {
+            StopAllCoroutines();
+            StartCoroutine(SmoothZoom(virtualCamera.m_Lens.OrthographicSize, originalCamSize, zoomTime));
+        }
     }
 
     IEnumerator SmoothZoom(float start, float end, float zoomTime)
