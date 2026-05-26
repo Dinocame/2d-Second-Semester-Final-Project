@@ -20,6 +20,10 @@ public class EnemyMovement : MonoBehaviour
     public LayerMask groundLayer;
     public float edgeOffset = 0.5f;
 
+    [Header("Wall Check")]
+    public float wallCheckDistance = 0.6f;
+    public LayerMask wallLayer;
+
     private Vector3 startPosition;
     private int direction = 1;
     private Rigidbody2D rb;
@@ -85,7 +89,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Patrol()
     {
-        if (!HasGroundAhead())
+        if (!HasGroundAhead() || HasWallAhead())
         {
             direction *= -1;
         }
@@ -194,6 +198,22 @@ public class EnemyMovement : MonoBehaviour
         );
 
         Debug.DrawRay(origin, castDirection * groundCheckDistance, Color.green);
+
+        return hit.collider != null;
+    }
+
+    bool HasWallAhead()
+    {
+        Vector2 origin = (Vector2)transform.position;
+
+        RaycastHit2D hit = Physics2D.Raycast(
+            origin,
+            Vector2.right * direction,
+            wallCheckDistance,
+            wallLayer
+        );
+
+        Debug.DrawRay(origin, Vector2.right * direction * wallCheckDistance, Color.blue);
 
         return hit.collider != null;
     }
