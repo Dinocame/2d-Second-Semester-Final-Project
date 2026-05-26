@@ -187,7 +187,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.5
   m_GravityScale: 4
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 90bbb173ac101f640a5c617322934757, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -241,6 +241,7 @@ MonoBehaviour:
   attackDamage: 1
   movingProjectilePrefab: {fileID: 2340260037407194644, guid: 45901673e4e83814085f19a983332933, type: 3}
   rightClickCooldown: 2
+  fireballKnockbackForce: 12
   fireballSoulCost: 10
 --- !u!114 &2712162658950131837
 MonoBehaviour:
@@ -257,7 +258,7 @@ MonoBehaviour:
   health: 1
   isDead: 0
   ghost: {fileID: 3448528111510096280, guid: d02dc514df8912c4d97c7a6dca2a4b8c, type: 3}
-  soulPower: 15
+  soulPower: 100
   soulPowerMax: 100
   soulBar: {fileID: 0}
 --- !u!114 &4046650925541522642

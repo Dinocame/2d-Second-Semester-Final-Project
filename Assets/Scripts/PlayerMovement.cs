@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 8f;
     public float jumpingPower = 16f;
     private bool isFacingRight = true;
+
+    private bool knockbackActive = false;
     private float lastGroundedTime;
     public float coyoteTime = 2f;
     [SerializeField] private Rigidbody2D rb;
@@ -53,7 +55,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        if (!knockbackActive)
+        {
+            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        }
     }
 
     private bool IsGrounded()
@@ -94,5 +99,25 @@ public class PlayerMovement : MonoBehaviour
     public int GetFacingDirection()
     {
         return isFacingRight ? 1 : -1;
+    }
+
+    public void ApplyKnockback(Vector2 force, float duration)
+    {
+        StopAllCoroutines();
+        StartCoroutine(KnockbackRoutine(force, duration));
+    }
+
+    IEnumerator KnockbackRoutine(Vector2 force, float duration)
+    {
+        knockbackActive = true;
+
+        rb.AddForce(force, ForceMode2D.Impulse);
+        /*
+        rb.velocity = new Vector2(0, rb.velocity.y);
+        rb.AddForce(force, ForceMode2D.Impulse);
+        */
+        yield return new WaitForSeconds(duration);
+
+        knockbackActive = false;
     }
 }

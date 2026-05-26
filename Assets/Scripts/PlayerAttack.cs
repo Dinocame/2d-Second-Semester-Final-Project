@@ -18,11 +18,16 @@ public class PlayerAttack : MonoBehaviour
 
     private float nextRightClickTime = 0f;
 
+    public float fireballKnockbackForce = 12f;
+
+    private Rigidbody2D rb;
+
     private PlayerDeath playerDeath;
     public float fireballSoulCost = 10f;
     void Start()
     {
         playerDeath = GetComponent<PlayerDeath>();
+        rb = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
@@ -68,6 +73,11 @@ public class PlayerAttack : MonoBehaviour
         mousePos.z = 0f;
 
         Vector2 direction = (mousePos - transform.position).normalized;
+
+        GetComponent<PlayerMovement>().ApplyKnockback(
+            -direction * fireballKnockbackForce,
+            0.2f
+        );
 
         Vector2 spawnPosition = (Vector2)transform.position + direction * fireDistance;
 
