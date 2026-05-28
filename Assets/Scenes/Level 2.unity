@@ -8134,34 +8134,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 102530758488526004, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 545967715729424289, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
-      propertyPath: m_Size.y
-      value: 1.8912773
-      objectReference: {fileID: 0}
-    - target: {fileID: 545967715729424289, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.0021739006
-      objectReference: {fileID: 0}
-    - target: {fileID: 2712162658950131837, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
-      propertyPath: Spikes
-      value: 
-      objectReference: {fileID: 745590548}
-    - target: {fileID: 2712162658950131837, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
-      propertyPath: health
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2712162658950131837, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
-      propertyPath: soulPower
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3623157067301008631, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
-      propertyPath: speed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3920319989677390132, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.1
@@ -8201,10 +8173,6 @@ PrefabInstance:
     - target: {fileID: 3920319989677390132, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5615878476417258752, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
-      propertyPath: fireDistance
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9174,7 +9142,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b954b5e97d947074c9e63266cc1bc155, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.627
   m_Pitch: 1
   Loop: 0
   Mute: 0
