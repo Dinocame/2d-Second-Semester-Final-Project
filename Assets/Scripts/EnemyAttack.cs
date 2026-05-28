@@ -17,6 +17,8 @@ public class EnemyAttack : MonoBehaviour
 
     public float projectileSpeed = 8f;
 
+    public float attackSize = 1f;
+
     private Transform player;
     private Rigidbody2D rb;
     private EnemyMovement movement;
@@ -113,7 +115,7 @@ public class EnemyAttack : MonoBehaviour
         Kill temp = attack.GetComponent<Kill>();
         temp.owner = Kill.OwnerType.Enemy;
 
-        attack.transform.localScale = new Vector3(0.75f * direction, 1f, 1f);
+        attack.transform.localScale = new Vector3(0.75f * direction, attackSize, attackSize);
 
         ProjectileMove move = attack.GetComponent<ProjectileMove>();
 
