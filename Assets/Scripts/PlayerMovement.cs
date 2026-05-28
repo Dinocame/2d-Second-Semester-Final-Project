@@ -9,6 +9,12 @@ public class PlayerMovement : MonoBehaviour
     public float jumpingPower = 16f;
     private bool isFacingRight = true;
 
+    public AudioSource footstepSource;
+    public AudioClip footstepClip;
+    public float footstepInterval = 0.4f;
+    private float footstepTimer;
+    
+
     private bool knockbackActive = false;
     private float lastGroundedTime;
     public float coyoteTime = 2f;
@@ -29,8 +35,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+         
         horizontal = Input.GetAxisRaw("Horizontal");
-
+        HandleFootsteps();
+        
         //Record last time it was grounded
         if (IsGrounded() && Time.time>=coyoteTime)
         {
@@ -51,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Flip();
+        HandleFootsteps(); 
     }
 
     private void FixedUpdate()
@@ -119,5 +128,22 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         knockbackActive = false;
+    }
+    void HandleFootsteps()
+    {
+        bool isMoving = Mathf.Abs(horizontal) > 0.1f;
+        if (isMoving && IsGrounded())
+        {
+            footstepTimer -= Time.deltaTime;
+            if (footstepTimer <= 0f)
+            {
+                footstepSource.PlayOneShot(footstepClip);
+                footstepTimer = footstepInterval;
+            }
+        }
+        else
+        {
+            footstepTimer = 0f;
+        }
     }
 }
