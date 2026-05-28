@@ -8,9 +8,18 @@ public class BossDetectionChild : MonoBehaviour
     public float timeDelay = 1f;
     public float detectionRadius = 5f;
     public LayerMask playerLayer;
-
+    [Header("Boss stuff")] 
+    public GameObject bossBarObj;
+    private SoulBar soulBar;
+    private EnemyHealth bossHealth;
+    
     private void Start()
     {
+        bossBarObj.SetActive(false);
+        soulBar = bossBarObj.GetComponent<SoulBar>();
+        bossHealth = GetComponent<EnemyHealth>();
+        bossHealth.soulBar = soulBar;
+        soulBar.SetSoulPowerMax(bossHealth.health);
         InvokeRepeating(nameof(CheckForPlayer), 0f, timeDelay);
     }
 
@@ -26,11 +35,13 @@ public class BossDetectionChild : MonoBehaviour
 
         if (player != null)
         {
-            Debug.Log("Player detected!");
+            //Debug.Log("Player detected!");
+            bossBarObj.SetActive(true);
+            soulBar.SetSoulPower(bossHealth.health);
         }
         else
         {
-            Debug.Log("Player not in range.");
+            //Debug.Log("Player not in range.");
         }
     }
 

@@ -20,7 +20,7 @@ public class ReincarnateOrSmthIdkLol : MonoBehaviour
     void Start()
     { 
         isFirst = true;
-        soulBar = FindObjectOfType<SoulBar>();
+        soulBar = GameObject.Find("Soul Bar").GetComponent<SoulBar>();
         _cinemachine = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
         soulPowerText =  GameObject.FindWithTag("soulpower").GetComponent<TMP_Text>();
         levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
