@@ -22,7 +22,7 @@ public class PlayerDeath : MonoBehaviour
 
     void Awake()
     {
-        soulBar = FindObjectOfType<SoulBar>();
+        soulBar = GameObject.Find("Soul Bar").GetComponent<SoulBar>();
         soulPowerText =  GameObject.FindWithTag("soulpower").GetComponent<TMP_Text>();
         UpdateSoulText();
     }
