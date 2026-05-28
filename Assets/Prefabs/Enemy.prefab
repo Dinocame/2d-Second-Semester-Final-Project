@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd32413116ff274794879dfe6c80e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDistance: 5
+  moveDistance: 7
   speed: 3
   chaseSpeed: 7
   closeDetectRadius: 2
@@ -142,6 +142,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   edgeOffset: 0.6
+  wallCheckDistance: 0.6
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!61 &4456027070178123980
 BoxCollider2D:
   m_ObjectHideFlags: 0
