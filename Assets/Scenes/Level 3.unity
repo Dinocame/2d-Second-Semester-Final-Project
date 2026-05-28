@@ -341,6 +341,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1360970953611817821, guid: 69b3837e85e4a034db293fc6fd733bc3, type: 3}
+      propertyPath: moveDistance
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1503401656546424731, guid: 69b3837e85e4a034db293fc6fd733bc3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.22152
@@ -1065,7 +1069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1360970953611817821, guid: 69b3837e85e4a034db293fc6fd733bc3, type: 3}
       propertyPath: moveDistance
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1503401656546424731, guid: 69b3837e85e4a034db293fc6fd733bc3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -86101,6 +86105,10 @@ PrefabInstance:
       propertyPath: soulBar
       value: 
       objectReference: {fileID: 1285896990}
+    - target: {fileID: 2712162658950131837, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
+      propertyPath: soulPower
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3920319989677390132, guid: 07d3cf916dba61f4484b8b9858940579, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.09
