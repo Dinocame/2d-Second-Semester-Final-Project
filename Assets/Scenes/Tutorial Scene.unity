@@ -252,8 +252,8 @@ MonoBehaviour:
 
     corpse on the other side to Reincarnate.'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bb580de2927494d3cb367a9cd63b2ad2, type: 2}
+  m_sharedMaterial: {fileID: -1849408985950764459, guid: bb580de2927494d3cb367a9cd63b2ad2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -429,6 +429,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717224248704012241, guid: 171f25cbdff062d4687c24c26756a4d7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888354199580910607, guid: 171f25cbdff062d4687c24c26756a4d7, type: 3}
+      propertyPath: m_fontSize
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888354199580910607, guid: 171f25cbdff062d4687c24c26756a4d7, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: bb580de2927494d3cb367a9cd63b2ad2, type: 2}
+    - target: {fileID: 1888354199580910607, guid: 171f25cbdff062d4687c24c26756a4d7, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888354199580910607, guid: 171f25cbdff062d4687c24c26756a4d7, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1849408985950764459, guid: bb580de2927494d3cb367a9cd63b2ad2, type: 2}
+    - target: {fileID: 1888354199580910607, guid: 171f25cbdff062d4687c24c26756a4d7, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912835551044910347, guid: 171f25cbdff062d4687c24c26756a4d7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 79.923
+      objectReference: {fileID: 0}
+    - target: {fileID: 1912835551044910347, guid: 171f25cbdff062d4687c24c26756a4d7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 12.062
+      objectReference: {fileID: 0}
+    - target: {fileID: 3083051566110899751, guid: 171f25cbdff062d4687c24c26756a4d7, type: 3}
+      propertyPath: m_fontSize
+      value: 26.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3083051566110899751, guid: 171f25cbdff062d4687c24c26756a4d7, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: bb580de2927494d3cb367a9cd63b2ad2, type: 2}
+    - target: {fileID: 3083051566110899751, guid: 171f25cbdff062d4687c24c26756a4d7, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 26.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3083051566110899751, guid: 171f25cbdff062d4687c24c26756a4d7, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -1849408985950764459, guid: bb580de2927494d3cb367a9cd63b2ad2, type: 2}
+    - target: {fileID: 3083051566110899751, guid: 171f25cbdff062d4687c24c26756a4d7, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3450904619734256649, guid: 171f25cbdff062d4687c24c26756a4d7, type: 3}
@@ -1876,8 +1924,8 @@ MonoBehaviour:
     Try right-clicking and aiming at the
     enemy below...'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bb580de2927494d3cb367a9cd63b2ad2, type: 2}
+  m_sharedMaterial: {fileID: -1849408985950764459, guid: bb580de2927494d3cb367a9cd63b2ad2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -206106,8 +206154,8 @@ MonoBehaviour:
 
     If you die move back into a corpse to Reincarnate.'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bb580de2927494d3cb367a9cd63b2ad2, type: 2}
+  m_sharedMaterial: {fileID: -1849408985950764459, guid: bb580de2927494d3cb367a9cd63b2ad2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -206245,8 +206293,8 @@ MonoBehaviour:
     Good
     luck...'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bb580de2927494d3cb367a9cd63b2ad2, type: 2}
+  m_sharedMaterial: {fileID: -1849408985950764459, guid: bb580de2927494d3cb367a9cd63b2ad2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -206803,8 +206851,8 @@ MonoBehaviour:
     Practice
     movement with these simple jumps.'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bb580de2927494d3cb367a9cd63b2ad2, type: 2}
+  m_sharedMaterial: {fileID: -1849408985950764459, guid: bb580de2927494d3cb367a9cd63b2ad2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
