@@ -86088,7 +86088,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1373087353713224559, guid: 69b3837e85e4a034db293fc6fd733bc3, type: 3}
       propertyPath: cooldown
-      value: 0.2
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1373087353713224559, guid: 69b3837e85e4a034db293fc6fd733bc3, type: 3}
+      propertyPath: windupTime
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1373087353713224559, guid: 69b3837e85e4a034db293fc6fd733bc3, type: 3}
       propertyPath: attackPrefab
