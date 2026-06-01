@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck5;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Animator animator;
+
 
     void Start()
     {
@@ -60,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
         Flip();
         HandleFootsteps(); 
+        letsAnimate();
     }
 
     private void FixedUpdate()
@@ -145,5 +148,10 @@ public class PlayerMovement : MonoBehaviour
         {
             footstepTimer = 0f;
         }
+    }
+    void letsAnimate()
+    {
+        animator.SetBool("isRunning", Mathf.Abs(horizontal) > 0.0f);
+        animator.SetBool("isGrounded", IsGrounded());
     }
 }

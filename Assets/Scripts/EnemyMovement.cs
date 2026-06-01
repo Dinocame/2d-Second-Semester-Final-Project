@@ -33,10 +33,13 @@ public class EnemyMovement : MonoBehaviour
     private enum State { Patrol, Chase, Return }
     private State currentState = State.Patrol;
 
+    public Animator animator;
+
     void Start()
     {
         startPosition = transform.position;
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -50,6 +53,7 @@ public class EnemyMovement : MonoBehaviour
         }
 
         HandleFacing();
+        AnimateMovement();
     }
 
     void FixedUpdate()
@@ -245,5 +249,11 @@ public class EnemyMovement : MonoBehaviour
     public int GetDirection()
     {
         return direction;
+    }
+
+    //animate set enemyMoving bool
+    void AnimateMovement()
+    {
+        animator.SetBool("enemyMoving", Mathf.Abs(rb.velocity.x) > 0.1f);
     }
 }
