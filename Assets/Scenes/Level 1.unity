@@ -309,7 +309,6 @@ GameObject:
   - component: {fileID: 108310210}
   - component: {fileID: 108310209}
   - component: {fileID: 108310208}
-  - component: {fileID: 108310211}
   m_Layer: 0
   m_Name: Spikes
   m_TagString: Spikes
@@ -4185,18 +4184,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &108310211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108310206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 187fc5ed23fb770488c34792930120f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &125701648
 GameObject:
   m_ObjectHideFlags: 0
