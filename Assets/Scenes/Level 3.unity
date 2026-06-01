@@ -86204,7 +86204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1360970953611817821, guid: 69b3837e85e4a034db293fc6fd733bc3, type: 3}
       propertyPath: chaseSpeed
-      value: 18.39
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1360970953611817821, guid: 69b3837e85e4a034db293fc6fd733bc3, type: 3}
       propertyPath: moveDistance
