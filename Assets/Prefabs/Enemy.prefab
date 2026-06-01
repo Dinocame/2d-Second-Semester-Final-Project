@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7158543858753168958}
   - component: {fileID: 4546122378797627489}
   - component: {fileID: 1360970953611817821}
+  - component: {fileID: 6641021400472732254}
   - component: {fileID: 4456027070178123980}
   - component: {fileID: 1373087353713224559}
   - component: {fileID: 1115084177111234651}
@@ -146,6 +147,28 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 0
+  animator: {fileID: 6641021400472732254}
+--- !u!95 &6641021400472732254
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155266426107169576}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: afe6ba307a4ab4ec7ae1eca1ebb8efa3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!61 &4456027070178123980
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -209,6 +232,7 @@ MonoBehaviour:
   windupTime: 0.3
   recoveryTime: 0.3
   projectileSpeed: 0
+  attackSize: 1
 --- !u!114 &1115084177111234651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   soulPower: 10
+  soulBar: {fileID: 0}
   corpsePrefab: {fileID: 4423455660827136863, guid: df3af159d65130941881af67432cd569, type: 3}
 --- !u!1 &4480084667845548951
 GameObject:
