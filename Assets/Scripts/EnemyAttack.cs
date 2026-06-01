@@ -115,8 +115,11 @@ public class EnemyAttack : MonoBehaviour
         Kill temp = attack.GetComponent<Kill>();
         temp.owner = Kill.OwnerType.Enemy;
 
-        attack.transform.localScale = new Vector3(0.75f * direction, attackSize, attackSize);
-
+        //attack.transform.localScale = new Vector3(0.75f * direction, attackSize, attackSize);
+        Vector3 scale = attack.transform.localScale;
+        scale.x = Mathf.Abs(scale.x) * direction;
+        attack.transform.localScale = scale;
+        
         ProjectileMove move = attack.GetComponent<ProjectileMove>();
 
         if (move != null)
